@@ -1,0 +1,652 @@
+/* CSS Variables */
+:root {
+    --utd-green: #154734;
+    --utd-orange: #e87500;
+    --utd-orange-hover: #d46600;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --dark-gray: #343a40;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PT Serif Font */
+@font-face {
+    font-family: 'PT Serif';
+    src: url('images/pt-serif-v12-latin-regular.svg') format('svg'),
+         url('images/pt-serif-v12-latin-regular.woff2') format('woff2'),
+         url('images/pt-serif-v12-latin-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('images/pt-serif-v12-latin-italic.svg') format('svg'),
+         url('images/pt-serif-v12-latin-italic.woff2') format('woff2'),
+         url('images/pt-serif-v12-latin-italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('images/pt-serif-v12-latin-700.svg') format('svg'),
+         url('images/pt-serif-v12-latin-700.woff2') format('woff2'),
+         url('images/pt-serif-v12-latin-700.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'PT Serif', Georgia, serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--utd-green);
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-gray);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--utd-green);
+    background: rgba(21, 71, 52, 0.1);
+}
+
+.nav-apply {
+    background: var(--utd-orange);
+    color: var(--white) !important;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+.nav-apply:hover {
+    background: var(--utd-orange-hover);
+    transform: translateY(-1px);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--utd-green);
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/UDCO-group-photo.jpg') center center / cover no-repeat fixed;
+    color: var(--white);
+    padding: 100px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(21, 71, 52, 0.8) 0%, rgba(15, 61, 42, 0.9) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--utd-orange);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--utd-orange);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--utd-orange-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--utd-green);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--utd-green);
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-gray);
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefit-item i {
+    font-size: 2rem;
+    color: var(--utd-orange);
+    width: 60px;
+    text-align: center;
+}
+
+.benefit-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--utd-green);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-item p {
+    color: var(--medium-gray);
+    margin: 0;
+}
+
+/* Members Section */
+.members {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.members-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 0;
+}
+
+.member-card {
+    min-width: 300px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin: 0 15px;
+    transition: var(--transition);
+    border-top: 4px solid var(--utd-orange);
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.member-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    border: 4px solid var(--light-gray);
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.member-card:hover .member-photo {
+    border-color: var(--utd-orange);
+}
+
+.member-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--utd-green);
+    margin-bottom: 0.5rem;
+}
+
+.member-position {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.member-quote {
+    font-style: italic;
+    color: var(--dark-gray);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.member-quote::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--utd-orange);
+    opacity: 0.3;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+.member-quote::after {
+    content: '"';
+    font-size: 2rem;
+    color: var(--utd-orange);
+    opacity: 0.3;
+    position: absolute;
+    right: -10px;
+    bottom: -20px;
+}
+
+
+
+/* Apply Section */
+.apply {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.apply-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.apply-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--utd-green);
+    margin-bottom: 1.5rem;
+}
+
+.apply-info p {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+}
+
+.apply-status {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--utd-orange);
+    background: rgba(232, 117, 0, 0.1);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--utd-orange);
+}
+
+.requirements {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+}
+
+.requirements h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--utd-green);
+    margin-bottom: 1.5rem;
+}
+
+.requirements ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.requirements li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+}
+
+.requirements li i {
+    color: var(--utd-orange);
+    font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--utd-green);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: var(--utd-orange);
+    width: 40px;
+    text-align: center;
+}
+
+.contact-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--utd-green);
+    margin-bottom: 0.25rem;
+}
+
+.contact-item p {
+    color: var(--dark-gray);
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background: var(--utd-green);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    opacity: 0.8;
+}
+
+.footer-info {
+    text-align: right;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-content,
+    .apply-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .benefits {
+        gap: 1rem;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .benefit-item i {
+        width: auto;
+    }
+    
+    .member-card {
+        min-width: 280px;
+        margin: 0 10px;
+    }
+    
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-info {
+        text-align: center;
+    }
+    
+    .section-header h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .hero {
+        padding: 90px 0 60px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .about,
+    .members,
+    .projects,
+    .apply,
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .member-card {
+        min-width: 250px;
+        padding: 1.5rem;
+    }
+    
+    .member-photo {
+        width: 150px;
+        height: 150px;
+    }
+}
