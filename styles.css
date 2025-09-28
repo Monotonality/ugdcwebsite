@@ -3,6 +3,7 @@
     --utd-green: #154734;
     --utd-orange: #e87500;
     --utd-orange-hover: #d46600;
+    --utd-secondary: #5fe0b7;
     --white: #ffffff;
     --light-gray: #f8f9fa;
     --medium-gray: #6c757d;
@@ -52,7 +53,7 @@
 }
 
 body {
-    font-family: 'PT Serif', Georgia, serif;
+    font-family: 'Crimson Text', 'PT Serif', Georgia, serif;
     line-height: 1.6;
     color: var(--dark-gray);
     overflow-x: hidden;
@@ -86,6 +87,7 @@ body {
 }
 
 .nav-brand h1 {
+    font-family: 'Barlow', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--utd-green);
@@ -98,6 +100,7 @@ body {
 }
 
 .nav-link {
+    font-family: 'Barlow', Arial, sans-serif;
     text-decoration: none;
     color: var(--dark-gray);
     font-weight: 500;
@@ -479,48 +482,94 @@ body {
     background: var(--light-gray);
 }
 
-.contact-info h3 {
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-header h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--utd-green);
+    margin-bottom: 1rem;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.dean-photo {
+    flex-shrink: 0;
+}
+
+.dean-photo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--utd-orange);
+    box-shadow: var(--shadow);
+}
+
+.dean-info {
+    flex: 1;
+}
+
+.dean-info h4 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--utd-green);
+    margin-bottom: 0.5rem;
+}
+
+.dean-title {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
     margin-bottom: 2rem;
-    text-align: center;
+    font-weight: 500;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 1rem;
-    transition: var(--transition);
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--light-gray);
 }
 
-.contact-item:hover {
-    transform: translateX(10px);
-    box-shadow: var(--shadow-lg);
+.contact-item:last-child {
+    border-bottom: none;
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--utd-orange);
-    width: 40px;
+    width: 24px;
     text-align: center;
 }
 
-.contact-item h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--utd-green);
-    margin-bottom: 0.25rem;
-}
-
-.contact-item p {
+.contact-item span {
     color: var(--dark-gray);
-    margin: 0;
+    font-size: 1rem;
 }
 
 /* Footer */
@@ -597,6 +646,18 @@ body {
     .member-card {
         min-width: 280px;
         margin: 0 10px;
+    }
+    
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .dean-photo img {
+        width: 150px;
+        height: 150px;
     }
     
     

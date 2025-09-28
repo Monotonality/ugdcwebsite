@@ -1,5 +1,39 @@
 # UT Dallas Brand Guide & Development Reference
 
+## Official Brand Standards
+
+### Institutional Marks
+- **Primary Brand**: The University of Texas at Dallas represents top-level branding
+- **Secondary Units**: No logos may be created for schools, centers, departments, or programs
+- **Required**: Wordmark "The University of Texas at Dallas" should be included when representing the University to external audiences
+
+### Logo Usage Guidelines
+- **Preferred Color**: UT Dallas orange (#e87500)
+- **Alternatives**: Black or white when orange cannot be used
+- **Two-color versions**: Only on white background
+- **Minimum Sizes**: 
+  - Monogram: 18px diameter for web
+  - Emblem: 100px diameter for web
+- **Safe Area**: Maintain proper distance from other elements
+
+### Logo Color Guidelines
+- Use white on UTD orange background
+- Use black on 0% to 30% gray background  
+- Use white on 30% or more gray background
+- Use white version on UT Dallas green background
+- Use two-color versions only on white background
+
+### Common Misuse to Avoid
+- Distorting proportions of institutional marks
+- Cropping or removing portions of marks
+- Rearranging components
+- Rotating marks
+- Recreating marks
+- Overlaying on images that affect legibility
+- Recoloring marks
+- Using black marks on >30% gray background
+- Using white marks on <30% gray background
+
 ## Brand Colors
 
 ### UT Dallas Orange
@@ -16,10 +50,82 @@
 - **HEX**: #154734
 - **Usage**: Primary brand color, headers, navigation, main content
 
+### UT Dallas Secondary Color
+- **PANTONE**: 3375
+- **CMYK**: 40-0-26-0
+- **RGB**: 95-244-183
+- **HEX**: #5fe0b7
+- **Usage**: Secondary accent color, highlights, complementary elements
+
+## Neutrals
+
+### Silver
+- **PANTONE**: 877
+- **Type**: Metallic
+- **Usage**: Premium elements, special accents
+
+### Black Tints
+- Any tints of black can be used to complement the color palette
+- **Usage**: Text, borders, subtle accents
+
 ## Typography
-- **Primary Font**: Arial, sans-serif (system font for web)
-- **Alternative**: Helvetica, sans-serif
-- **Fallback**: Generic sans-serif
+
+### Official UT Dallas Fonts
+
+#### Minion Pro (Serif)
+- **Usage**: Primary serif font for headings and body text
+- **Context**: Used by professional graphic designers for advertising and University publications
+- **Styles Available**:
+  - Regular
+  - Italic
+  - Semibold
+  - Semibold Italic
+  - Bold
+  - Bold Italic
+- **Availability**: Included in Adobe Creative Suite package
+
+#### FF DIN (Sans-serif)
+- **Usage**: Primary sans-serif font for UI elements and modern text
+- **Context**: Used by professional graphic designers for advertising and University publications
+- **Styles Available**:
+  - Light
+  - Light Italic
+  - Regular
+  - Regular Italic
+  - Medium
+  - Medium Italic
+  - Bold
+  - Bold Italic
+  - Black
+  - Black Italic
+  - Condensed Light
+  - Condensed Regular
+  - Condensed Medium
+  - Condensed Bold
+  - Condensed Black
+
+### Default Fonts (Daily Use)
+- **Times New Roman** (serif) - Official default font
+- **Arial** (sans-serif) - Official default font
+- **Usage**: Preferred for daily use in print and electronic media
+
+### Specialty Font
+- **Modesto Text**: Used for the University wordmark
+- **Access**: Available through Adobe Typekit with Enterprise ID
+
+### Web Fonts
+- **Preferred**: Modesto, Minion Pro, DIN 2014 (web-friendly version of FF DIN)
+- **Access**: Contact University Web Services for web font access
+- **System Fallback**: Times New Roman (serif) or Arial (sans-serif)
+
+### Google Font Substitutes
+- **FF DIN Alternatives**: Barlow, Roboto Condensed, Roboto Regular
+- **Minion Pro Alternatives**: Crimson Text, Alegreya
+
+### Current Implementation
+- **Serif**: Crimson Text (Google Fonts alternative to Minion Pro)
+- **Sans-serif**: Inter (Google Fonts alternative to FF DIN)
+- **Fallback**: Times New Roman → Arial → system fonts
 
 ## Spacing & Layout
 - **Container Max Width**: 1200px
@@ -84,8 +190,10 @@
 :root {
   --utd-orange: #e87500;
   --utd-green: #154734;
+  --utd-secondary: #5fe0b7;
   --utd-orange-rgb: 232, 117, 0;
   --utd-green-rgb: 18, 71, 52;
+  --utd-secondary-rgb: 95, 244, 183;
   --container-width: 1200px;
   --section-padding: 3rem;
   --border-radius: 8px;
